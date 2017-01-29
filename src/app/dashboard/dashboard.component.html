@@ -1,3 +1,5 @@
-<p>
-	dashboard works!
-</p>
+<md-card *ngFor="let report of data">
+	<md-card-title>{{report.time}}</md-card-title>
+	<md-card-subtitle>{{report.description}}</md-card-subtitle>
+	<span></span>
+</md-card>

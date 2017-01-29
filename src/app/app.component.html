@@ -1,7 +1,9 @@
 <md-toolbar color="primary">
 	<span>Time App</span>
 	<span class="example-spacer"></span>
-	<span routerLink="dashboard">Dashboard</span>
-	<span routerLink="time">Time</span>
+	<span class="time-menu-link" routerLink="dashboard">Dashboard</span>
+	<span class="time-menu-link" routerLink="time">Time</span>
 </md-toolbar>
-<router-outlet></router-outlet>
+<div class="container">
+	<router-outlet></router-outlet>
+</div>

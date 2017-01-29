@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ReportsService } from './../reports.service';
+import { Report } from './../report';
 
 @Component({
 	selector: 'app-dashboard',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+	data: Report[];
 
-	constructor() { }
+	constructor(private _reportsService : ReportsService) { }
+
+	getReports() {
+		this._reportsService.getReports().then(reports => this.data = reports);
+	}
 
 	ngOnInit() {
+		this.getReports();
 	}
 
 }

@@ -16,6 +16,10 @@ export class DashboardComponent implements OnInit {
 		this._reportsService.getReports().then(reports => this.data = reports);
 	}
 
+	addNewReport() {
+		console.log("trying to add new report");
+	}
+
 	ngOnInit() {
 		this.getReports();
 	}

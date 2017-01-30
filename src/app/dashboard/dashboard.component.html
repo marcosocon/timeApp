@@ -1,8 +1,8 @@
 <div class="time-container">
 	<button color="primary" (click)="addNewReport()" class="time-add-report-button" md-raised-button>Add new report</button>
 	<md-card class="time-report-card" *ngFor="let report of data">
-		<md-card-title>{{report.time}}</md-card-title>
+		<md-card-title>{{report.time}} hs</md-card-title>
 		<md-card-subtitle>{{report.description}}</md-card-subtitle>
-		<span></span>
+		<md-card-subtitle>{{report.date | amDateFormat:'LL'}}</md-card-subtitle>
 	</md-card>
 </div>

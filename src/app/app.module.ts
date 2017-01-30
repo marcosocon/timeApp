@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
+import { MomentModule } from 'angular2-moment';
 //Importing Routes
 import { routes } from './app.routes';
 //Importing Services
@@ -24,7 +25,8 @@ import { TimeComponent } from './time/time.component';
 		FormsModule,
 		HttpModule,
 		MaterialModule.forRoot(),
-		routes
+		routes,
+		MomentModule
 	],
 	providers: [ReportsService],
 	bootstrap: [AppComponent]

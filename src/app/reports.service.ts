@@ -10,5 +10,4 @@ export class ReportsService {
 	getReports(): Promise<Report[]> {
 		return Promise.resolve(REPORTS);
 	}
-
 }

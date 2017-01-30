@@ -13,12 +13,14 @@ import { ReportsService } from './reports.service';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TimeComponent } from './time/time.component';
+import { ReportComponent } from './report/report.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		DashboardComponent,
-		TimeComponent
+		TimeComponent,
+		ReportComponent
 	],
 	imports: [
 		BrowserModule,

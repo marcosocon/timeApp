@@ -23,10 +23,6 @@ export class DashboardComponent implements OnInit {
 		}).reverse();
 	}
 
-	addNewReport() {
-		console.log("trying to add new report");
-	}
-
 	ngOnInit() {
 		this.getReports();
 	}

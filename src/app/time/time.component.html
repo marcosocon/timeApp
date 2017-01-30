@@ -1,3 +1,15 @@
-<p>
-	time works!
-</p>
+<div>
+	<!--ADD FORM COMPONENT-->
+	<span>Add new report:</span>
+	<md-input-container>
+		<input type="text" md-input placeholder="Report description">
+	</md-input-container>
+	<md-input-container>
+		<input type="number" step="0.25" md-input placeholder="Hours worked">
+	</md-input-container>
+	<md-input-container>
+		<input type="date" md-input>
+	</md-input-container>
+	<button color="primary" (click)="addReport()" class="time-add-report-button" md-raised-button>Add!</button>
+	<!--ADD FORM COMPONENT-->
+</div>

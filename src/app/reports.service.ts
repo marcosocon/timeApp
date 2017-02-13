@@ -10,4 +10,8 @@ export class ReportsService {
 	getReports(): Promise<Report[]> {
 		return Promise.resolve(REPORTS);
 	}
+
+	setReport(report : Report) {
+		REPORTS.push(report);
+	}
 }

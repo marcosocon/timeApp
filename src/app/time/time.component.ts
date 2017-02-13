@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ReportsService } from './../reports.service';
 
 @Component({
 	selector: 'app-time',
@@ -6,19 +7,25 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./time.component.css']
 })
 export class TimeComponent implements OnInit {
-	report = {
-		description : "",
-		time : 0,
-		date: null,
-		billable : true
-	};
-	constructor() { }
+	report;
+	constructor(private _reportsService : ReportsService) { }
 
-	submitTimeForm(value) {
-		console.log(value);
+	submitTimeForm(report) {
+		this._reportsService.setReport(report);
+		this.setNullValues();
+	}
+
+	setNullValues() {
+		this.report = {
+			description : "",
+			time : 0,
+			date: null,
+			billable : true
+		};
 	}
 
 	ngOnInit() {
+		this.setNullValues();
 	}
 
 }

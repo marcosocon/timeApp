@@ -1,5 +1,5 @@
 import { Report } from './report';
-export const REPORTS: Report[] = [
+export let REPORTS: Report[] = [
 	{
 		id: 1,
 		description: 'Synth aesthetic letterpress, dreamcatcher pok pok kinfolk slow-carb retro cronut vexillologist biodiesel gochujang ennui tumblr fanny pack. Pug cronut organic kickstarter chicharrones hoodie, skateboard semiotics. Shabby chic yr tumblr godard synth. Waistcoat fanny pack swag kickstarter viral +1.',

@@ -1,15 +1,17 @@
 <div>
 	<!--ADD FORM COMPONENT-->
-	<span>Add new report:</span>
-	<md-input-container>
-		<input type="text" md-input placeholder="Report description">
-	</md-input-container>
-	<md-input-container>
-		<input type="number" step="0.25" md-input placeholder="Hours worked">
-	</md-input-container>
-	<md-input-container>
-		<input type="date" md-input>
-	</md-input-container>
-	<button color="primary" (click)="addReport()" class="time-add-report-button" md-raised-button>Add!</button>
+	<form #timeForm="ngForm" (ngSubmit)="submitTimeForm(timeForm.value)">
+		<md-input-container>
+			<input type="text" name="description" [(ngModel)]="report.description" #description="ngModel" md-input placeholder="Report description" required>
+		</md-input-container>
+		<md-input-container>
+			<input type="number" step="0.25" name="time" [(ngModel)]="report.time" #time="ngModel" md-input placeholder="Hours worked" required>
+		</md-input-container>
+		<md-input-container>
+			<input type="date" name="date" [(ngModel)]="report.date" #date="ngModel" md-input required>
+		</md-input-container>
+		<md-checkbox name="billable" [(ngModel)]="report.billable" #billable="ngModel">Billable</md-checkbox>
+		<button color="primary" type="submit" class="time-add-report-button" md-raised-button>Add!</button>
+	</form>
 	<!--ADD FORM COMPONENT-->
 </div>

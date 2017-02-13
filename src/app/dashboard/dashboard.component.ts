@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ReportsService } from './../reports.service';
 import { Report } from './../report';
+import * as _ from 'lodash';
 
 @Component({
 	selector: 'app-dashboard',
@@ -9,6 +10,10 @@ import { Report } from './../report';
 })
 export class DashboardComponent implements OnInit {
 	data: Report[];
+	filter = {
+		beginDate: '',
+		finishDate: ''
+	};
 
 	constructor(private _reportsService : ReportsService) { }
 
@@ -21,6 +26,10 @@ export class DashboardComponent implements OnInit {
 			var x = a[key]; var y = b[key];
 			return ((x < y) ? -1 : ((x > y) ? 1 : 0));
 		}).reverse();
+	}
+
+	filterReports(beginDate, finishDate){
+		this.data = this._reportsService.getReportsFromPeriod(this.filter.beginDate, this.filter.finishDate);
 	}
 
 	ngOnInit() {

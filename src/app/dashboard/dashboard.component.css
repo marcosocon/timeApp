@@ -1,6 +1,9 @@
 .time-container{
-	margin: 0 150px
+	margin: 0 150px;
 }
 .time-add-report-button {
 	margin-top: 20px;
+}
+.time-form{
+	width: 500px;
 }

@@ -1,3 +1,12 @@
 <div class="time-container">
+	<div class="time-form">
+		<form #reportForm="ngForm" (ngSubmit)="filterReports(reportForm.value)">
+			<span>Filter Reports from : </span>
+			<input type="date" name="beginDate" [(ngModel)]="filter.beginDate" #beginDate="ngModel" md-input required>
+			<span> To :</span>
+			<input type="date" name="finishDate" [(ngModel)]="filter.finishDate" #finishDate="ngModel" md-input required>
+			<button (click)="filterReports()" type="submit">Filter Reports</button>
+		</form>
+	</div>
 	<report [data]="data"></report>
 </div>

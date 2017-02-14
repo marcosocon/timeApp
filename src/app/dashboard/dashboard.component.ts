@@ -17,11 +17,12 @@ export class DashboardComponent implements OnInit {
 
 	constructor(private _reportsService : ReportsService) { }
 
-	getReports() {
-		this._reportsService.getReports().then(reports => this.data = this.sortReports(reports, 'date'));
+	getReports () {
+		this._reportsService.getReports()
+			.subscribe((data) => this.data = this.sortReports(data, 'date'));
 	}
 
-	sortReports(array:Report[], key:string): Report[] {
+	sortReports (array:Report[], key:string): Report[] {
 		return array.sort(function(a, b) {
 			var x = a[key]; var y = b[key];
 			return ((x < y) ? -1 : ((x > y) ? 1 : 0));

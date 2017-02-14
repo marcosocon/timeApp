@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ReportsService } from './../reports.service';
 import { Report } from './../report';
 
 @Component({
@@ -9,7 +10,12 @@ import { Report } from './../report';
 export class ReportComponent implements OnInit {
 	@Input() data: Report[]
 
-	constructor() { }
+	constructor(private _reportsService : ReportsService) { }
+
+	deleteReport (id) {
+		this._reportsService.deleteReport(id)
+			.subscribe( function () { return true } )
+	}
 
 	ngOnInit() {
 	}

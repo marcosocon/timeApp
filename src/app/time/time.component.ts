@@ -8,11 +8,15 @@ import { ReportsService } from './../reports.service';
 })
 export class TimeComponent implements OnInit {
 	report;
+	errorMessage;
 	constructor(private _reportsService : ReportsService) { }
 
 	submitTimeForm(report) {
-		this._reportsService.setReport(report);
-		this.setNullValues();
+		if (report && report.time && report.description && report.date) {
+			this._reportsService.setReport(report)
+				.subscribe(function(res) {return true});
+			this.setNullValues();
+		}
 	}
 
 	setNullValues() {

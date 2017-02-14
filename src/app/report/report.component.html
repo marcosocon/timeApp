@@ -4,4 +4,5 @@
 		<md-card-subtitle *ngIf="report.billable"><strong>Billable</strong></md-card-subtitle>
 		<md-card-subtitle *ngIf="!report.billable"><strong>Not Billable</strong></md-card-subtitle>
 		<md-card-subtitle>{{report.date | amDateFormat:'LL'}}</md-card-subtitle>
+		<button (click)="deleteReport(report._id)">delete</button>
 </md-card>

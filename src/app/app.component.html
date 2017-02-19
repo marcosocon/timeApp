@@ -1,9 +1,17 @@
-<md-toolbar color="primary">
-	<span>Time App</span>
-	<span class="example-spacer"></span>
-	<span class="time-menu-link" routerLink="dashboard">Dashboard</span>
-	<span class="time-menu-link" routerLink="time">Time</span>
-</md-toolbar>
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+	<a class="navbar-brand" href="#">Time App</a>
+	<div class="collapse navbar-collapse">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item active">
+				<a class="nav-link" routerLink="dashboard">Dashboard<span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" routerLink="time">Time</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
 <div class="container">
 	<router-outlet></router-outlet>
 </div>

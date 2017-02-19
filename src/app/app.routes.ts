@@ -10,11 +10,6 @@ import { TimeComponent } from './time/time.component';
 
 export const router: Routes = [
 	{
-		path: '',
-		component: DashboardComponent,
-		canActivate: [AuthGuard],
-	},
-	{
 		path: 'login',
 		component: LoginComponent
 	},
@@ -23,13 +18,18 @@ export const router: Routes = [
 		component: RegisterComponent
 	},
 	{
-		path: '**',
-		redirectTo: 'login'
+		path: 'dashboard',
+		component: DashboardComponent,
+		canActivate: [AuthGuard],
 	},
 	{
 		path: 'time',
 		canActivate: [AuthGuard],
 		component: TimeComponent
+	},
+	{
+		path: '**',
+		redirectTo: 'login'
 	}
 ]
 

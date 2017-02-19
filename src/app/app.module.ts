@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { MaterialModule } from '@angular/material';
 import { MomentModule } from 'angular2-moment';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 import { AuthGuard } from './guards/auth.guard';
 import { AuthenticationService } from './authentication.service';
@@ -34,9 +34,9 @@ import { RegisterComponent } from './register/register.component';
 		BrowserModule,
 		FormsModule,
 		HttpModule,
-		MaterialModule.forRoot(),
 		routes,
-		MomentModule
+		MomentModule,
+		NgbModule.forRoot()
 	],
 	providers: [
 		AuthenticationService,

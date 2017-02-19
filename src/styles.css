@@ -1,11 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+@import './app/bootstrap.min.css';
+
 body {
 	margin: 0!important;
+	padding-top: 70px;
 }
+
 .example-spacer {
 	flex: 1 1 auto;
 }
+
 .time-menu-link {
 	margin: 0 20px;
+}
+
+a {
+	cursor: pointer;
+}
+
+.help-block {
+	font-size: 12px;
 }

@@ -5,6 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { MomentModule } from 'angular2-moment';
+
+import { AuthGuard } from './guards/auth.guard';
+import { AuthenticationService } from './authentication.service';
+
 //Importing Routes
 import { routes } from './app.routes';
 //Importing Services
@@ -14,13 +18,17 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TimeComponent } from './time/time.component';
 import { ReportComponent } from './report/report.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		DashboardComponent,
 		TimeComponent,
-		ReportComponent
+		ReportComponent,
+		LoginComponent,
+		RegisterComponent
 	],
 	imports: [
 		BrowserModule,
@@ -30,7 +38,11 @@ import { ReportComponent } from './report/report.component';
 		routes,
 		MomentModule
 	],
-	providers: [ReportsService],
+	providers: [
+		AuthenticationService,
+		AuthGuard,
+		ReportsService
+	],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -13,7 +13,7 @@ export class ReportComponent implements OnInit {
 	constructor(private _reportsService : ReportsService) { }
 
 	deleteReport (id) {
-		this._reportsService.deleteReport(id)
+		this._reportsService.delete(id)
 			.subscribe( function () { return true } )
 	}
 

@@ -13,7 +13,7 @@ export class TimeComponent implements OnInit {
 
 	submitTimeForm(report) {
 		if (report && report.time && report.description && report.date) {
-			this._reportsService.setReport(report)
+			this._reportsService.set(report)
 				.subscribe(function(res) {return true});
 			this.setNullValues();
 		}

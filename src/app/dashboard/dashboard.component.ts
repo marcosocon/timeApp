@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit {
 	constructor(private _reportsService : ReportsService) { }
 
 	getReports () {
-		this._reportsService.getReports()
+		this._reportsService.get()
 			.subscribe((data) => this.data = this.sortReports(data, 'date'));
 	}
 
@@ -29,9 +29,9 @@ export class DashboardComponent implements OnInit {
 		}).reverse();
 	}
 
-	filterReports(beginDate, finishDate){
-		this.data = this._reportsService.getReportsFromPeriod(this.filter.beginDate, this.filter.finishDate);
-	}
+	// filterReports(beginDate, finishDate){
+	// 	this.data = this._reportsService.getReportsFromPeriod(this.filter.beginDate, this.filter.finishDate);
+	// }
 
 	ngOnInit() {
 		this.getReports();
